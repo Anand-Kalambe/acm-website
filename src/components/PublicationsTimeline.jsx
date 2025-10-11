@@ -7,7 +7,7 @@ const timelineData = [
     title: 'TEJAS VOL 1', 
     description: 'We start by gaining a deep understanding of your business goals and challenges, laying the groundwork for a truly transformative digital solution.', 
     imageUrl: 'https://res.cloudinary.com/df9us90ur/image/upload/v1728923642/TejasVol1.avif',
-    linkUrl: 'hhttps://online.pubhtml5.com/hiwar/abef/' // Reference Link Added
+    linkUrl: 'https://online.pubhtml5.com/hiwar/abef/' // Reference Link Added
   },
   { 
     id: 2, 
