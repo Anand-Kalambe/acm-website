@@ -7,7 +7,7 @@ const timelineData = [
     title: 'TEJAS VOL 1', 
     description: 'We start by gaining a deep understanding of your business goals and challenges, laying the groundwork for a truly transformative digital solution.', 
     imageUrl: 'https://res.cloudinary.com/df9us90ur/image/upload/v1728923642/TejasVol1.avif',
-    linkUrl: 'hhttps://online.pubhtml5.com/hiwar/abef/' // Reference Link Added
+    linkUrl: 'https://online.pubhtml5.com/hiwar/abef/' // Reference Link Added
   },
   { 
     id: 2, 
@@ -71,10 +71,10 @@ export default function PublicationsTimeline() {
                 {/* Main flex container for content and timeline */}
                 <div className="relative flex flex-col md:flex-row items-center justify-center w-full h-full px-6 md:px-12 lg:px-20">
 
-                  {/* Left content (Label and Description) */}
-                  <div className="flex flex-col items-center md:items-end justify-center md:w-2/5 w-full text-center md:text-right mb-8 md:mb-0 md:mr-10">
+                 
+                  <div className="flex flex-col items-center md:items-start justify-center md:w-2/5 w-full text-center md:text-left mb-8 md:mb-0 md:mr-10">
                     
-                    {/* MODIFIED: Title Button to match the screenshot style */}
+        
                     <a
                       href={entry.linkUrl}
                       target="_blank"
@@ -82,7 +82,7 @@ export default function PublicationsTimeline() {
                       className="relative px-12 py-5 font-extrabold uppercase text-lg text-black bg-gradient-to-r from-blue-200/90 via-white/80 to-blue-500/90 border border-white/40 rounded-[50px] shadow-2xl shadow-blue-900/50 transition-all duration-300 mb-4 cursor-pointer hover:scale-[1.05]"
                     >
                       {entry.title}
-                      {/* Inner border/glow effect is removed for clarity and a cleaner look matching the image */}
+                   
                     </a>
                     
                     {/* Description text */}
@@ -91,7 +91,7 @@ export default function PublicationsTimeline() {
                     </p>
                   </div>
 
-                  {/* Timeline Divider and Dot - centered and prominent */}
+                  {/* Timeline Divider and Dot */}
                   <div className="hidden md:flex flex-col items-center h-full justify-center mx-auto md:mx-0 w-8">
                     {/* Vertical Line */}
                     <div className="absolute top-0 h-full w-px bg-white/20 z-10"></div>
@@ -104,7 +104,7 @@ export default function PublicationsTimeline() {
                   {/* Right content (Image) */}
                   <div className="md:w-2/5 w-full mt-8 md:mt-0 md:ml-10">
                     
-                    {/* Image wrapped in an <a> tag */}
+                    
                     <a
                       href={entry.linkUrl}
                       target="_blank"
