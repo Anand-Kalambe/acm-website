@@ -55,9 +55,17 @@ export default function PublicationsTimeline() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-black text-white">
-      <header className="w-full h-screen flex items-center justify-center relative overflow-hidden bg-black">
-        <div className="absolute w-[150%] h-[150%] bg-blue-800 rounded-full right-[-85%] bottom-[-65%] opacity-60 blur-3xl" />
+    /* This outer container remains black */
+    <div className="w-full min-h-screen text-white bg-black">
+      
+      {/* --- CHANGE 1: ---
+        - Replaced "animated-gradient-bg" with "animated-circle-bg" 
+      */}
+      <header className="w-full h-screen flex items-center justify-center relative overflow-hidden animated-circle-bg">
+        {/* --- CHANGE 2: ---
+          - Removed the static blue circle div. 
+          - The new class handles the animation.
+        */}
         <h1 className="w-full font-playfair font-bold text-center uppercase text-white z-10 px-4 text-[clamp(2.25rem,10vw,6rem)] tracking-[0.1em]">
           {title}
         </h1>
@@ -127,3 +135,4 @@ export default function PublicationsTimeline() {
     </div>
   );
 }
+
