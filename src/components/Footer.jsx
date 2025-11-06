@@ -1,8 +1,11 @@
 import { MapPin, Mail, Phone } from "lucide-react";
+import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
-const Footer = () => {
+export const Footer = () => {
   return (
-    <footer className="bg-[#0a0a0a] border-t border-border/30 py-12 px-8">
+    //  FIX 1: Added "text-gray-200" to set a light base color for all text
+    <footer className="bg-[#0a0a0a] text-gray-200 border-t border-border/30 py-12 px-8">
+      {/* Map Section (No change needed here) */}
       <div className="mapcontainer w-full flex justify-center py-10 bg-background">
         <div className="w-[90%] md:w-[80%] lg:w-[70%] overflow-hidden rounded-2xl shadow-lg border border-border">
           <iframe
@@ -15,13 +18,15 @@ const Footer = () => {
         </div>
       </div>
 
-
+      {/* Footer Columns */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Column 1: ACM SIGAI TCET */}
         <div>
           <h3 className="text-lg font-bold mb-4">ACM SIGAI TCET</h3>
-          <p className="text-sm text-foreground/70 leading-relaxed">
-            Special Interest Group on Artificial Intelligence at Thakur College of Engineering and Technology
+          {/* FIX 2: Changed text-foreground/70 to text-gray-400 */}
+          <p className="text-sm text-gray-400 leading-relaxed">
+            Special Interest Group on Artificial Intelligence at Thakur College
+            of Engineering and Technology
           </p>
         </div>
 
@@ -29,11 +34,32 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-bold mb-4">Pages</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="/events" className="text-foreground/70 hover:text-accent transition-colors">Home</a></li>
-            <li><a href="/events-list" className="text-foreground/70 hover:text-accent transition-colors">Events</a></li>
-            <li><a href="#team" className="text-foreground/70 hover:text-accent transition-colors">Team</a></li>
-            <li><a href="#publications" className="text-foreground/70 hover:text-accent transition-colors">Publications</a></li>
-            <li><a href="#blogs" className="text-foreground/70 hover:text-accent transition-colors">Blogs</a></li>
+            <li>
+              {/* FIX 3: Changed text-foreground/70 and hover:text-accent */}
+              <a href="/events" className="text-gray-400 hover:text-white transition-colors">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/events-list" className="text-gray-400 hover:text-white transition-colors">
+                Events
+              </a>
+            </li>
+            <li>
+              <a href="#team" className="text-gray-400 hover:text-white transition-colors">
+                Team
+              </a>
+            </li>
+            <li>
+              <a href="#publications" className="text-gray-400 hover:text-white transition-colors">
+                Publications
+              </a>
+            </li>
+            <li>
+              <a href="#blogs" className="text-gray-400 hover:text-white transition-colors">
+                Blogs
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -43,15 +69,16 @@ const Footer = () => {
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2">
               <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-              <span className="text-foreground/70">Thakur College, Mumbai</span>
+              {/* FIX 4: Changed text-foreground/70 */}
+              <span className="text-gray-400">Thakur College, Mumbai</span>
             </li>
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4 flex-shrink-0" />
-              <span className="text-foreground/70">sigai@tcet.ac.in</span>
+              <span className="text-gray-400">sigai@tcet.ac.in</span>
             </li>
             <li className="flex items-center gap-2">
               <Phone className="w-4 h-4 flex-shrink-0" />
-              <span className="text-foreground/70">+91 12345 67890</span>
+              <span className="text-gray-400">+91 12345 67890</span>
             </li>
           </ul>
         </div>
@@ -61,28 +88,28 @@ const Footer = () => {
           <h3 className="text-lg font-bold mb-4">Follow Us</h3>
           <div className="flex gap-3">
             <a
-              href="https://facebook.com"
+              href="https://www.instagram.com/tcet_acm.sigai?igsh=aHI0aXh4emQ4dmNp"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent transition-colors"
+              className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent transition-colors hover:bg-pink-500"
             >
-              <span className="text-sm font-bold">F</span>
+              <FaInstagram className="w-5 h-5" />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://github.com/SIG-AI-OpenSource"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent transition-colors"
+              className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent transition-colors hover:bg-gray-700"
             >
-              <span className="text-sm font-bold">X</span>
+              <FaGithub className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/tcet-acm-sigai/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent transition-colors"
+              className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent transition-colors hover:bg-blue-600"
             >
-              <span className="text-sm font-bold">In</span>
+              <FaLinkedin className="w-5 h-5" />
             </a>
           </div>
         </div>
@@ -90,5 +117,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;
