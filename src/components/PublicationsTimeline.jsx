@@ -58,25 +58,20 @@ export default function PublicationsTimeline() {
     /* This outer container remains black */
     <div className="w-full min-h-screen text-white bg-black">
       
-      {/* --- CHANGE 1: ---
-        - Replaced "animated-gradient-bg" with "animated-circle-bg" 
-      */}
+      {/* --- This is your "PUBLICATIONS" screen (Screen 2) --- */}
       <header className="w-full h-screen flex items-center justify-center relative overflow-hidden animated-circle-bg">
-        {/* --- CHANGE 2: ---
-          - Removed the static blue circle div. 
-          - The new class handles the animation.
-        */}
         <h1 className="w-full font-playfair font-bold text-center uppercase text-white z-10 px-4 text-[clamp(2.25rem,10vw,6rem)] tracking-[0.1em]">
           {title}
         </h1>
       </header>
 
+      {/* --- This is your Magazine section (Screen 3) --- */}
       <section className="w-full min-h-screen flex items-center justify-center p-6 md:p-12">
         <div className="w-full h-screen max-w-7xl rounded-3xl bg-neutral-900/70 shadow-2xl backdrop-blur-md overflow-hidden relative border border-white/10">
           <ScrollStack>
             {timelineData.map((entry) => (
               <ScrollStackItem key={entry.id}>
-                {/* Main flex container for content and timeline */}
+                {/* ... all the magazine content ... */}
                 <div className="relative flex flex-col md:flex-row items-center justify-center w-full h-full px-6 md:px-12 lg:px-20">
 
                  
@@ -135,4 +130,3 @@ export default function PublicationsTimeline() {
     </div>
   );
 }
-
