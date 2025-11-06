@@ -11,3 +11,120 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* --- ADD THIS CSS AT THE END --- */
+
+.desktop-nav-link {
+  /* These are the styles we moved from Navbar.jsx */
+  color: #ccc;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  font-weight: 510;
+  text-decoration: none;
+  transition: color 0.3s;
+  
+  /* Required for the animation */
+  position: relative;
+  overflow: hidden; /* Hides the meteor when it's off-screen */
+  padding-bottom: 5px; /* Adds a little space for the line */
+}
+
+.desktop-nav-link:hover {
+  color: white; /* Text color on hover */
+}
+
+/* This is the "tail" (the light white line) */
+.desktop-nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  /* Fades out slowly when you un-hover */
+  transition: opacity 1s ease;
+}
+
+/* This is the "meteor" (the sparkling line) */
+.desktop-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  /* A gradient to look like a sparkle */
+  background: linear-gradient(to right, transparent, white, transparent);
+  /* Starts off-screen to the left */
+  transform: translateX(-100%);
+  /* On un-hover, it snaps back instantly (0s) */
+  transition: transform 0s;
+}
+
+/* --- This is the hover animation --- */
+
+/* 1. The meteor streaks across */
+.desktop-nav-link:hover::after {
+  transform: translateX(100%);
+  /* Meteor animation duration */
+  transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* 2. The tail fades in */
+.desktop-nav-link:hover::before {
+  opacity: 1;
+  /* Tail fades in after a short delay, to look like it's left "behind" */
+  transition: opacity 0.3s ease 0.3s;
+}
+
+/* --- START: REPLACEMENT DYNAMIC BACKGROUND --- */
+
+/* Defines the 20-second animation.
+  It now moves from right (60%) to left (-60%) and back.
+*/
+@keyframes move-circle {
+  0% {
+    transform: translateX(60%) translateY(-50%);
+  }
+  50% {
+    transform: translateX(-60%) translateY(-50%);
+  }
+  100% {
+    transform: translateX(60%) translateY(-50%);
+  }
+}
+
+/* This is the new class for the header */
+.animated-circle-bg {
+  position: relative; /* Required for the ::before pseudo-element */
+  overflow: hidden;   /* Hides the circle when it moves off-screen */
+  background-color: #030712; /* Dark background */
+}
+
+/* This is the animated circle itself */
+.animated-circle-bg::before {
+  content: '';
+  position: absolute;
+  /* Make it a very large circle */
+  width: 120vh; 
+  height: 120vh;
+  /* Center it vertically */
+  top: 50%;
+  left: 50%;
+  
+  /* A light blue, very blurry, and faint circle */
+  background-color: #38bdf8; /* light blue */
+  opacity: 0.15; /* Faint */
+  border-radius: 50%;
+  filter: blur(100px); /* Very blurry */
+  
+  /* Apply the animation: 20s duration, ease-in-out, infinite loop */
+  animation: move-circle 20s ease-in-out infinite;
+  
+  /* Ensures it's behind the text (which has z-10) */
+  z-index: 1;
+}
+
+/* --- END: REPLACEMENT DYNAMIC BACKGROUND --- */
+

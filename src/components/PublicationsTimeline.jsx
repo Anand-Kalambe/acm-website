@@ -55,26 +55,29 @@ export default function PublicationsTimeline() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-black text-white">
-      <header className="w-full h-screen flex items-center justify-center relative overflow-hidden bg-black">
-        <div className="absolute w-[150%] h-[150%] bg-blue-800 rounded-full right-[-85%] bottom-[-65%] opacity-60 blur-3xl" />
+    /* This outer container remains black */
+    <div className="w-full min-h-screen text-white bg-black">
+      
+      {/* --- This is your "PUBLICATIONS" screen (Screen 2) --- */}
+      <header className="w-full h-screen flex items-center justify-center relative overflow-hidden animated-circle-bg">
         <h1 className="w-full font-playfair font-bold text-center uppercase text-white z-10 px-4 text-[clamp(2.25rem,10vw,6rem)] tracking-[0.1em]">
           {title}
         </h1>
       </header>
 
+      {/* --- This is your Magazine section (Screen 3) --- */}
       <section className="w-full min-h-screen flex items-center justify-center p-6 md:p-12">
         <div className="w-full h-screen max-w-7xl rounded-3xl bg-neutral-900/70 shadow-2xl backdrop-blur-md overflow-hidden relative border border-white/10">
           <ScrollStack>
             {timelineData.map((entry) => (
               <ScrollStackItem key={entry.id}>
-                {/* Main flex container for content and timeline */}
+                {/* ... all the magazine content ... */}
                 <div className="relative flex flex-col md:flex-row items-center justify-center w-full h-full px-6 md:px-12 lg:px-20">
 
-                  {/* Left content (Label and Description) */}
-                  <div className="flex flex-col items-center md:items-end justify-center md:w-2/5 w-full text-center md:text-right mb-8 md:mb-0 md:mr-10">
+                 
+                  <div className="flex flex-col items-center md:items-start justify-center md:w-2/5 w-full text-center md:text-left mb-8 md:mb-0 md:mr-10">
                     
-                    {/* MODIFIED: Title Button to match the screenshot style */}
+        
                     <a
                       href={entry.linkUrl}
                       target="_blank"
@@ -82,7 +85,7 @@ export default function PublicationsTimeline() {
                       className="relative px-12 py-5 font-extrabold uppercase text-lg text-black bg-gradient-to-r from-blue-200/90 via-white/80 to-blue-500/90 border border-white/40 rounded-[50px] shadow-2xl shadow-blue-900/50 transition-all duration-300 mb-4 cursor-pointer hover:scale-[1.05]"
                     >
                       {entry.title}
-                      {/* Inner border/glow effect is removed for clarity and a cleaner look matching the image */}
+                   
                     </a>
                     
                     {/* Description text */}
@@ -91,7 +94,7 @@ export default function PublicationsTimeline() {
                     </p>
                   </div>
 
-                  {/* Timeline Divider and Dot - centered and prominent */}
+                  {/* Timeline Divider and Dot */}
                   <div className="hidden md:flex flex-col items-center h-full justify-center mx-auto md:mx-0 w-8">
                     {/* Vertical Line */}
                     <div className="absolute top-0 h-full w-px bg-white/20 z-10"></div>
@@ -104,7 +107,7 @@ export default function PublicationsTimeline() {
                   {/* Right content (Image) */}
                   <div className="md:w-2/5 w-full mt-8 md:mt-0 md:ml-10">
                     
-                    {/* Image wrapped in an <a> tag */}
+                    
                     <a
                       href={entry.linkUrl}
                       target="_blank"
