@@ -1,46 +1,28 @@
 import { kv } from '@vercel/kv';
 
 export default async function handler(req, res) {
-  // --- CORS ---
+  // CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
 
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
 
-  if (req.method !== 'POST') {
+  if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
   try {
-    const { id } = req.query;
+    const keys = await kv.keys('magazine:*');
+    const counts = {};
 
-    if (!id) {
-      return res.status(400).json({ error: 'Magazine ID missing' });
+    for (const key of keys) {
+      const id = key.split(':')[1];
+      counts[id] = await kv.get(key);
     }
 
-    const ip =
-      req.headers['x-forwarded-for']?.split(',')[0] || 'unknown';
-
-    const viewKey = `magazine:${id}`;
-    const userKey = `viewed:${id}:${ip}`;
-
-    // Ensure key exists
-    await kv.setnx(viewKey, 0);
-
-    // Check if already viewed
-    const alreadyViewed = await kv.get(userKey);
-
-    if (!alreadyViewed) {
-      await kv.incr(viewKey);
-      await kv.set(userKey, 1, { ex: 86400 }); // 24 hrs
-    }
-
-    const count = await kv.get(viewKey);
-
-    return res.status(200).json({ count });
+    return res.status(200).json(counts);
   } catch (err) {
     return res.status(500).json({ error: err.message });
   }
