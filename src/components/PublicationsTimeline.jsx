@@ -65,7 +65,8 @@ export default function PublicationsTimeline() {
     return () => clearInterval(intervalId);
   }, []);
 
-  // --- NEW: Handler to increment view count ---
+  
+  //  increment view count
   const handleMagazineClick = (id) => {
     // 1. Optimistically update the UI (so user sees it change instantly)
     setViewCounts((prev) => ({
