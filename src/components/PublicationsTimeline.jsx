@@ -19,24 +19,31 @@ const timelineData = [
   },
   { 
     id: 'vol3', 
-    title: 'TEJAS VOL 3', 
+    title: 'TEJAS VOL 3.1', 
     description: 'Leveraging the latest technologies, we build robust and scalable applications that perform flawlessly under any workload.', 
     imageUrl: 'https://res.cloudinary.com/df9us90ur/image/upload/v1728923748/TejasVol3.1.avif',
     linkUrl: 'https://pubhtml5.com/hiwar/vfrp/' 
   },
   { 
     id: 'vol4', 
-    title: 'TEJAS VOL 4', 
+    title: 'TEJAS VOL 4.1', 
     description: 'We conclude with rigorous testing and a strategic deployment plan, ensuring a seamless launch and continued success for your project.', 
     imageUrl: 'https://res.cloudinary.com/df9us90ur/image/upload/v1729399795/TejasVol4.1.jpg',
     linkUrl: 'https://online.pubhtml5.com/eqdgd/rjrs/' 
   },
   { 
     id: 'vol5', 
-    title: 'TEJAS VOL 5', 
+    title: 'TEJAS VOL 4.2', 
     description: 'We provide ongoing support and maintenance, ensuring your digital product continues to evolve and deliver value long after its initial launch.', 
     imageUrl: 'https://res.cloudinary.com/df9us90ur/image/upload/v1748405489/TejasVolume42.jpg',
     linkUrl: 'https://online.pubhtml5.com/rylr/mdds/' 
+  },
+    { 
+    id: 'vol6', 
+    title: 'TEJAS VOL 5.1', 
+    description: 'Dive into the latest trends and innovations with TEJAS VOL 5.1, showcasing cutting-edge designs and forward-thinking concepts that push the boundaries of creativity.', 
+    imageUrl: 'https://i.ibb.co/mCWvTLqX/Tejas-5-1-Main.jpg',
+    linkUrl: 'https://online.pubhtml5.com/fmpgh/fjuo/' 
   },
 ];
 
