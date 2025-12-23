@@ -36,27 +36,27 @@ export const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li>
               {/* FIX 3: Changed text-foreground/70 and hover:text-accent */}
-              <a href="/events" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://acmsigai.tcetmumbai.in/" className="text-gray-400 hover:text-white transition-colors">
                 Home
               </a>
             </li>
             <li>
-              <a href="/events-list" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://acmsigai.tcetmumbai.in/Events" className="text-gray-400 hover:text-white transition-colors">
                 Events
               </a>
             </li>
             <li>
-              <a href="#team" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://acmsigai.tcetmumbai.in/Our-Team" className="text-gray-400 hover:text-white transition-colors">
                 Team
               </a>
             </li>
             <li>
-              <a href="#publications" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://acmsigai.tcetmumbai.in/Publications" className="text-gray-400 hover:text-white transition-colors">
                 Publications
               </a>
             </li>
             <li>
-              <a href="#blogs" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://acmsigai.tcetmumbai.in/Blogs" className="text-gray-400 hover:text-white transition-colors">
                 Blogs
               </a>
             </li>
@@ -74,11 +74,11 @@ export const Footer = () => {
             </li>
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4 flex-shrink-0" />
-              <span className="text-gray-400">sigai@tcet.ac.in</span>
+              <span className="text-gray-400">acmsigai10@gmail.com</span>
             </li>
             <li className="flex items-center gap-2">
               <Phone className="w-4 h-4 flex-shrink-0" />
-              <span className="text-gray-400">+91 12345 67890</span>
+              <span className="text-gray-400">+91 93265 90260</span>
             </li>
           </ul>
         </div>
